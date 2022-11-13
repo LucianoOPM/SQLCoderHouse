@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduccion a SQL</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <p>
+          DDL = Data definition languaje DML = Data Managment Languaje DCL =
+          Data control languaje TCL = Transaction control languaje
+        </p>
+        <h1>¿Qué es una base de datos relacional?</h1>
+        <p>
+          Las bases de datos relacionales se basan en el modelo relacional
+          <br />
+          usando tablas para representar los datos y las relaciones entre ellos.
+          <br />
+          <br />
+          Es poco frecuente encontrar casos de una DataBase(DB) con una sola
+          <br />
+          tabla pero, en el caso que se de la situacion se le denomina DB plana
+          ejemplo: Una de las desventajas de este modelo es que, si en un futuro
+          se
+          <br />
+          quieren actualizar el nombre del proveedor, se tendría que cambiar
+          <br />
+          todas y cada una de las filas en la cual el proveedor aparezca, lo
+          <br />
+          cual conlleva a un costo muy elevado
+        </p>
+        <img
+          width="650"
+          src="IMG/Opera Captura de pantalla_2022-11-11_185756_coderhouse.zoom.us.png"
+        />
+      </div>
+      <div>
+        <h1>Tabla de datos relacional</h1>
+        <img
+          width="650"
+          src="IMG/Opera Captura de pantalla_2022-11-11_190627_coderhouse.zoom.us.png"
+        />
+        <pre>
+            En este ejemplo, la información de los proveedores se separa en otra tabla. Esto sirve para no tener que repetir algunos de los textos que en la tabla anterior se repetían.
+
+            Ahora a los proveedores se les asignó un ID con el cual se accede a la tabla de compras, y si se quiere actualizar el nombre del proveedor se podrá hacer sin tanta complejidad como 
+            en la tabla anterior.
+
+            Estas tablas también se le conocen como entidades. Una entidad va a ser un objeto de la vida real que nosotros necesitemos separar.
+
+            El modelo relacional, se basa en bases de datos relacionales. ¿A que se refiere esto?
+
+            A tablas que se interconectan entre si.
+
+            Cuando nos referimos a tablas, son esquemas donde se representa información por medio de columnas y filas.
+        </pre>
+        <img
+          src="IMG/Opera Captura de pantalla_2022-11-11_191842_coderhouse.zoom.us.png"
+          width="650"
+        />
+        <pre>
+            Una tabla se representa a traves de 4 cosas.
+
+            Esquema o cabecera de la tabla: En esta posicion se guarda el nombre del dato de la información que nosotros vamos a almacenar en ella.
+            
+            Nombre de la tabla: Tiene que dictarme de forma conciza la información que yo estoy manejando en esta tabla. En este ejemplo tenemos usuarios del sistema
+
+            columnas o atributos: Es lo que le va a dar una forma a nuestra entidad u objeto, ya que caracterizan lo que es el objeto. En este caso al hablar de un USUARIO, el usuario tiene nombre
+            Apellido, email y contraseña.
+
+            Registro o Tuplas: Los registros o tuplas, son cada uno de los registros individuales que se encuentran en una tabla
+        </pre>
+        <img
+          src="IMG/Opera Captura de pantalla_2022-11-11_192101_coderhouse.zoom.us.png"
+          width="650"
+        />
+        <img
+          src="IMG/Opera Captura de pantalla_2022-11-11_202715_coderhouse.zoom.us.png"
+          width="650"
+        />
+      </div>
+      <div>
+        <h1>Tipos de relaciones.</h1>
+        <h2>Uno a uno</h2>
+        <pre>
+            Cada una de las tablas solo puede tener relación con otra tabla, o sea, se relaciona una con otra y viceversa. En un diagrama relacional se suele identificar con un 1 a cada lado de la tabla
+        </pre>
+        <h2>Uno a muchos</h2>
+        <pre>
+            Una tabla puede tener registros con muchas tablas o sea, que un "cliente" puede tener muchos "pedidos" o un "doctor" puede tener muchos "pacientes". A eso se refiere un modelo relacional uno a muchos. 
+            En este caso, la manera de representar esto en un diagrama relacional, es con un uno y un asterisco en la parte de "muchos" o una N o M
+        </pre>
+        <h2>Muchos a muchos</h2>
+        <pre>
+            En este caso, como la forma es de muchos a muchos, y no hay una forma de relacionar esta tabla a un solo objeto, se le coloca una tabla extra, que sirve como intermediaria para 
+            relacionar las tablas. De ejemplo podría ser, "muchos" pedidos pueden contener "muchos" articulos
+        </pre>
+      </div>
+
+      <div>
+        <h1>Claves o identificadores lógicos</h1>
+        <h2>Clave primaría o PK</h2>
+        <pre>
+            Es una clave primaria que no se repite en nigun otro lado, sirve para identificar la propiedad de la tabla. Esta clave es de caracter obligatoría, no puede ser un valor nulo.
+        </pre>
+        <h2>Clave foranea o FK</h2>
+        <pre>
+            Es una clave que nos sirve para relacionarse entre las tablas, para que una tabla se conecte con otra.
+        </pre>
+        <h2>Clave indice</h2>
+        <pre>
+            Es un campo que facilita la busqueda, muchas veces esta clave suele ser la clave primaria, ya que al ser una clave que no se repite
+            entonces al buscar por este registro, la busqueda se facilita.
+        </pre>
+        <p>
+          De todas estas claves, las que más se suelen utilizar son la primaría
+          y la foranea, ya que son las que identifican y relacionan las tablas
+          entre si.
+        </p>
+      </div>
+      <div>
+        <h1>Claves conceptuales.</h1>
+        <h2>Clave concatenada.</h2>
+        <img
+          src="IMG/Opera Captura de pantalla_2022-11-11_204921_coderhouse.zoom.us.png"
+          width="650"
+        />
+        <pre>
+            Estas claves son claves que se forman a partir de más de un campo, ya que un unico campo no serviría para identificar a ese registro unico.
+        </pre>
+        <h2>Clave candidata.</h2>
+        <img
+          src="IMG/Opera Captura de pantalla_2022-11-11_205130_coderhouse.zoom.us.png"
+          width="650"
+        />
+        <pre>
+            En las claves candidatas es cuando se puede tener más de un solo identificador, sin depender una de la otra.
+            Ambas claves pueden funcionar como clave principal ya que son valores unicos
+        </pre>
+      </div>
+      <div>
+        <h1>Entidad Relacion</h1>
+        <h2>Componentes</h2>
+        <pre>
+            Rectangulos: Representan conjuntos o entidades. (las tablas)
+            Elipses: Representan los atributos de cada entidad, en la mayoría de los casos suele ser la clave
+            Rombos: Representan las acciones que vamos a tener en las relaciones de la base de datos.
+            Lineas: Representan la conexion entre cada una de los componentes
+        </pre>
+        <img
+          src="IMG/Opera Captura de pantalla_2022-11-11_210141_coderhouse.zoom.us.png"
+          width="650"
+        />
+        <pre>
+          La imagen anterior es un ejemplo de un diagrama y la manera en la que se utilizan todos los componentes que ya se mencionaron anteriormente.
+        </pre>
+      </div>
+    </main>
+  </body>
+</html>
